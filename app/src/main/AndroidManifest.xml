@@ -28,7 +28,7 @@
         tools:targetApi="tiramisu">
         <profileable
             android:shell="true"
-            tools:targetApi="34" /> <!-- provider for share image -->
+            tools:targetApi="36" /> <!-- provider for share image -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.file_provider"

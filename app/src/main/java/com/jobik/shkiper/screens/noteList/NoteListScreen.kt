@@ -201,27 +201,27 @@ private fun NotesListContent(
             .fillMaxSize()
             .testTag("notes_list"),
     ) {
-        if (showDonateBanner) {
-            item(span = StaggeredGridItemSpan.FullLine) {
-                DonateBannerProvider(
-                    onClick = {
-                        SettingsManager.update(
-                            context = context,
-                            settings = settings.copy(lastShowingDonateBanner = LocalDateTime.now())
-                        )
-                        navController.navigateToSecondary(Screen.Purchases)
-                        showDonateBanner = false
-                    },
-                    onDismiss = {
-                        SettingsManager.update(
-                            context = context,
-                            settings = settings.copy(lastShowingDonateBanner = LocalDateTime.now())
-                        )
-                        showDonateBanner = false
-                    },
-                )
-            }
-        }
+//        if (showDonateBanner) {
+//            item(span = StaggeredGridItemSpan.FullLine) {
+//                DonateBannerProvider(
+//                    onClick = {
+//                        SettingsManager.update(
+//                            context = context,
+//                            settings = settings.copy(lastShowingDonateBanner = LocalDateTime.now())
+//                        )
+//                        navController.navigateToSecondary(Screen.Purchases)
+//                        showDonateBanner = false
+//                    },
+//                    onDismiss = {
+//                        SettingsManager.update(
+//                            context = context,
+//                            settings = settings.copy(lastShowingDonateBanner = LocalDateTime.now())
+//                        )
+//                        showDonateBanner = false
+//                    },
+//                )
+//            }
+//        }
         noteTagsList(
             tags = notesViewModel.screenState.value.hashtags,
             selected = notesViewModel.screenState.value.currentHashtag
