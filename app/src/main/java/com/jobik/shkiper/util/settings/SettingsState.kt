@@ -35,13 +35,23 @@ object SettingsHandler {
     const val DaysBeetwinShowingRateBanner = 16L
 
     fun checkIsDonateBannerNeeded(settingsState: SettingsState): Boolean {
-        val duration = Duration.between(settingsState.lastShowingDonateBanner, LocalDateTime.now())
-        return duration.toDays() >= DaysBeetwinShowingDonateBanner
+        try {
+            val duration =
+                Duration.between(settingsState.lastShowingDonateBanner, LocalDateTime.now())
+            return duration.toDays() >= DaysBeetwinShowingDonateBanner
+        } catch (e: Exception) {
+            return false
+        }
     }
 
     fun checkIsRateBannerNeeded(settingsState: SettingsState): Boolean {
-        val duration = Duration.between(settingsState.lastShowingRateBanner, LocalDateTime.now())
-        return duration.toDays() >= DaysBeetwinShowingRateBanner
+        try {
+            val duration =
+                Duration.between(settingsState.lastShowingRateBanner, LocalDateTime.now())
+            return duration.toDays() >= DaysBeetwinShowingRateBanner
+        } catch (e: Exception) {
+            return false
+        }
     }
 
     fun defaultLastShowingDonateBanner(): LocalDateTime = LocalDateTime.now()
