@@ -56,7 +56,3 @@ flexible repeat modes (daily, weekly, monthly, yearly) and don't forget importan
 ### Do you like this app? 💜
 
 Support it by joining __[stargazers](https://github.com/Efimj/Shkiper/stargazers)__ for this repository. ⭐ <br>
-
-
-<a href="https://www.buymeacoffee.com/efim" target="_blank">Also, support me
-with<img align="right"  src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
