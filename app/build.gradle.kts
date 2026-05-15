@@ -32,12 +32,15 @@ android {
 
         signingConfig = signingConfigs.getByName("debug")
 
+        resourceConfigurations += listOf("en", "zh")
+
         archivesName.set("shkiper-$versionName")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

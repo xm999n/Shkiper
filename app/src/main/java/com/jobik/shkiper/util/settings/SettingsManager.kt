@@ -57,10 +57,22 @@ object SettingsManager {
             SettingsState()
         } else {
             try {
-                Gson().fromJson(savedSettings, SettingsState::class.java)
+                Gson()
+                    .fromJson(savedSettings, SettingsState::class.java)
+                    .withSupportedLocalization()
             } catch (e: Exception) {
                 SettingsState()
             }
+        }
+    }
+
+    private fun SettingsState.withSupportedLocalization(): SettingsState {
+        val restoredLocalization = runCatching { localization }.getOrNull()
+
+        return if (restoredLocalization == Localization.EN || restoredLocalization == Localization.ZH) {
+            this
+        } else {
+            copy(localization = SettingsState().localization)
         }
     }
 }
